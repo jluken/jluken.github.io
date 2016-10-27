@@ -69,6 +69,36 @@
 					</pre>
 				</section>
 
+				<section>
+					<p>
+						Configure Maven to build Java sources that are not in the standard
+						package-based location:
+					</p>
+					<pre>
+						<code>
+&lt;build&gt;
+  &lt;sourceDirectory&gt;src&lt;/sourceDirectory&gt;
+  &lt;plugins&gt;
+    &lt;plugin&gt;
+      &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+      &lt;artifactId&gt;maven-jar-plugin&lt;/artifactId&gt;
+      &lt;version&gt;3.0.2&lt;/version&gt;
+      &lt;configuration&gt;
+        &lt;archive&gt;
+          &lt;manifest&gt;
+            &lt;addClasspath&gt;true&lt;/addClasspath&gt;
+            &lt;classpathPrefix&gt;lib/&lt;/classpathPrefix&gt;
+            &lt;mainClass&gt;Main&lt;/mainClass&gt;
+          &lt;/manifest&gt;
+        &lt;/archive&gt;
+      &lt;/configuration&gt;
+    &lt;/plugin&gt;
+  &lt;/plugins&gt;
+&lt;/build&gt;
+						</code>
+					</pre>
+				</section>
+
 				<section>Building Project with Maven</section>
 				<section>
 					<kbd>mvn package</kbd>
