@@ -47,7 +47,32 @@
 						<p class="fragment fade-in">Build Tool</p>
 					</div>
 				</section>
-				<section>Downloading and Installing Maven</section>
+				<section><h3>Downloading and Installing Maven</h3>
+						<h4>Requirements</h4>
+					<p>JDK 1.7 or newer<br />
+					10MB for Maven and up to 500MB for repository<br /></p>
+						<h4>Downloads</h4>
+					<p>Download either the .zip or tar.gz files from this site:<br />
+					<a href="https://maven.apache.org/download.cgi">https://maven.apache.org/download.cgi</a><br />
+					Download binary for easy installation, or source code if you want to modify and compile it yourself</p>
+					</section>
+				<section><h3>Installing Maven from file</h3>
+					<h4>Extract the files</h4>
+					<p><pre><code>unzip apache-maven-3.3.9-bin.zip</code></pre><br />
+					or<br />
+					<pre><code>tar xzvf apache-maven-3.3.9-bin.tar.gz</code></pre><br />
+					<h4>Add /bin folder to PATH</h4>
+					Windows: <br />Open "System Properties">"Advanced">"Environment Variables" and add PATH variable<br />
+					<pre><code>C:\Program Files\apache-maven-3.3.9\bin</code></pre><br />
+					Unix: <br /><pre><code>export PATH=/opt/apache-maven-3.3.9/bin:$PATH</code></pre>
+					</section>
+				<section><h3>Installing Maven via terminal</h3>
+				<p>Alternatively, Maven can be directly installed to Unix Systems through terminal commands</p><br />
+				<h4>Ubuntu:</h4>
+				<pre><code>sudo apt-get install maven</code></pre><br /><br />
+				<h4>OSX via Homebrew:</h4>
+				<pre><code>brew install maven</code></pre>
+				</section>
 
 				<section>
 					<h3>Configuring an existing project with Maven</h3>
