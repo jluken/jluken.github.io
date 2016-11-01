@@ -48,8 +48,95 @@
 					</div>
 				</section>
 				<section>Downloading and Installing Maven</section>
-				<section>Configuring Project with Maven</section>
-				<section>Building Project with Maven</section>
+
+				<section>
+					<h3>Configuring an existing project with Maven</h3>
+					<ol>
+						<li>Clone the project.</li>
+						<li>Remove any existing binaries or packages.</li>
+						<li>Create the Maven `pom.xml` configuration file.</li>
+					</ol>
+				</section>
+
+				<section>
+					<h3>Configuring an existing project with Maven</h3>
+					<p>Clone the project:</p>
+					<pre>
+						<code data-trim>
+git clone https://github.com/overben/Snake.git
+						</code>
+					</pre>
+					<p>Remove any existing binaries or packages:</p>
+					<pre>
+						<code data-trim>
+cd Snake
+rm SnakeGame.jar
+						</code>
+					</pre>
+				</section>
+
+				<section>
+					<h3>Configuring an existing project with Maven</h3>
+					<p>Create a basic Maven <code>pom.xml</code> configuration file:</p>
+					<pre>
+						<code data-trim>
+&lt;project
+  xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot;
+  xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+  xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot; &gt;
+  &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+
+  &lt;groupId&gt;com.github.overben.snake&lt;/groupId&gt;
+  &lt;artifactId&gt;snake&lt;/artifactId&gt;
+  &lt;version&gt;1.0&lt;/version&gt;
+  &lt;packaging&gt;jar&lt;/packaging&gt;
+
+  &lt;name&gt;Snake&lt;/name&gt;
+  &lt;url&gt;https://github.com/overben/Snake&lt;/url&gt;
+&lt;/project&gt;
+						</code>
+					</pre>
+				</section>
+
+				<section>
+					<p>
+						Configure Maven to build Java sources that are not in the standard
+						package-based location:
+					</p>
+					<pre>
+						<code>
+&lt;build&gt;
+  &lt;sourceDirectory&gt;src&lt;/sourceDirectory&gt;
+  &lt;plugins&gt;
+    &lt;plugin&gt;
+      &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+      &lt;artifactId&gt;maven-jar-plugin&lt;/artifactId&gt;
+      &lt;version&gt;3.0.2&lt;/version&gt;
+      &lt;configuration&gt;
+        &lt;archive&gt;
+          &lt;manifest&gt;
+            &lt;addClasspath&gt;true&lt;/addClasspath&gt;
+            &lt;classpathPrefix&gt;lib/&lt;/classpathPrefix&gt;
+            &lt;mainClass&gt;Main&lt;/mainClass&gt;
+          &lt;/manifest&gt;
+        &lt;/archive&gt;
+      &lt;/configuration&gt;
+    &lt;/plugin&gt;
+  &lt;/plugins&gt;
+&lt;/build&gt;
+						</code>
+					</pre>
+				</section>
+
+				<section>Building the project with Maven</section>
+				<section>
+					<pre>
+						<code>
+mvn package
+						</code>
+					</pre>
+				</section>
+
 				<section>Running Unit Tests with Maven</section>
 			</div>
 		</div>
