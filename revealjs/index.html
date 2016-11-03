@@ -1,84 +1,188 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<link rel="stylesheet" href="css/reveal.css"/>
-		<link rel="stylesheet" href="css/theme/black.css"/>
-		<link rel="stylesheet" href="css/custom.css"/>
+	<title>reveal.js</title>
 
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/zenburn.css"/>
+	<link rel="stylesheet" href="css/reveal.css" />
+	<link rel="stylesheet" href="css/theme/black.css" />
+	<link rel="stylesheet" href="css/custom.css" />
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>
-					<h1>
+	<!-- Theme used for syntax highlighting of code -->
+	<link rel="stylesheet" href="lib/css/zenburn.css" />
+
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
+	</script>
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section>
+				<h1>
 						<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Maven_logo.svg/1280px-Maven_logo.svg.png" alt="Maven" />
 					</h1>
-				</section>
-				<section>
-				    <h2>What is Maven?</h2>
-					<br />
-					<div>
-						<p class="fragment fade-in">Project Manager</p>
-						<p class="fragment fade-in">Build Tool</p>
+			</section>
+			<section>
+				<h2>What is Maven?</h2>
+				<br />
+				<div>
+					<p class="fragment fade-in">Build automation tool (primarily for Java)</p>
+				</div>
+			</section>
+			<section>
+				<h2>Why use it?</h2>
+				<br />
+				<p class="fragment fade-in">To make your life easier</p>
+			</section>
+			<section>
+				<h2>How so?</h2>
+				<br />
+				<br />
+				<div>
+					<div class="fragment fade-in">
+						<h4>Project Structure</h4>
+						<h4>Dependency Management</h4>
+						<h4>Build Lifecycle</h4>
 					</div>
-				</section>
-				<section>
-				    <h2>Why use it?</h2>
-					<br />
-					<br />
-					<div>
-						<p class="fragment fade-in">Project Manager</p>
-						<p class="fragment fade-in">Build Tool</p>
+				</div>
+			</section>
+			<section>
+				<h2>Project Structure</h2>
+				<br />
+				<br />
+				<div>
+					<div class="fragment fade-in left-align">
+						<p class="fragment fade-in" id="tab">Hundreds of prebuilt "archetypes" available</p>
+						<div class="fragment fade-in">
+							<p id="double-tab">Java</p>
+							<p id="double-tab">Java servlet</p>
+							<p id="double-tab">Spring MVC</p>
+							<p id="double-tab">Grails project</p>
+							<p id="double-tab">...</p>
+							<p id="double-tab">Custom-make your own</p>
+						</div>
 					</div>
-				</section>
-				<section>Downloading and Installing Maven</section>
+				</div>
+			</section>
+			<section>
+				<h4>Java Project</h4>
+				<img id="structure-image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Maven_CoC.svg/220px-Maven_CoC.svg.png" />
+			</section>
+			<section>
+				<h2>Dependency Management</h2>
+				<br />
+				<br />
+				<div class="left-align">
+					<h4 class="fragment fade-in">Project Object Management (pom.xml)</h4>
+					<p class="fragment fade-in" id="tab">Project Information</p>
+					<p class="fragment fade-in" id="tab">Dependencies</p>
+					<p class="fragment fade-in" id="tab">Plugins</p>
+					<h4 class="fragment fade-in">Centralized repository</h4>
+					<a href="https://mvnrepository.com/" class="fragment fade-in" id="tab">maven central</a>
+				</div>
+			</section>
+			<section>
+				<h2>Build Lifecycle</h2>
+				<ol class="fragment fade-in" id="font-small">
+					<li>
+						<span class="orange">validate</span>
+					</li>
+					<li>
+						generate-sources
+					</li>
+					<li>
+						process-sources
+					</li>
+					<li>
+						generate-resources
+					</li>
+					<li>
+						process-resources
+					</li>
+					<li>
+						<span class="orange">compile</span>
+					</li>
+					<li>
+						process-test-sources
+					</li>
+					<li>
+						process-test-resources
+					</li>
+					<li>
+						test-compile
+					</li>
+					<li>
+						<span class="orange">test</span>
+					</li>
+					<li>
+						<span class="orange">package</span>
+					</li>
+					<li>
+						<span class="orange">install</span>
+					</li>
+					<li>
+						<span class="orange">deploy</span>
+					</li>
+				</ol>
+			</section>
+			<section>
+				<h3>Downloading and Installing Maven</h3>
+				<h4>Requirements</h4>
+				<p>JDK 1.7 or newer<br /> 10MB for Maven and up to 500MB for repository<br /></p>
+				<h4>Downloads</h4>
+				<p>Download either the .zip or tar.gz files from this site:<br />
+					<a href="https://maven.apache.org/download.cgi">https://maven.apache.org/download.cgi</a><br /> Download binary for easy installation, or source code if you want to modify and compile it yourself</p>
+			</section>
+			<section>
+				<h3>Installing Maven from file</h3>
+				<h4>Extract the files</h4>
+				<p><pre><code>unzip apache-maven-3.3.9-bin.zip</code></pre> or
+					<pre><code>tar xzvf apache-maven-3.3.9-bin.tar.gz</code></pre>
+					<h4>Add /bin folder to PATH in Windows:</h4> Open "System Properties">"Advanced">"Environment Variables" and add PATH variable<br />
+					<pre><code>C:\Program Files\apache-maven-3.3.9\bin</code></pre>
+					<h4>Add /bin folder to PATH in Unix:</h4>
+					<pre><code>export PATH=/opt/apache-maven-3.3.9/bin:$PATH</code></pre>
+			</section>
+			<section>
+				<h3>Installing Maven via terminal</h3>
+				<p>Alternatively, Maven can be directly installed to Unix Systems through terminal commands</p><br />
+				<h4>Ubuntu:</h4>
+				<pre><code>sudo apt-get install maven</code></pre><br /><br />
+				<h4>OSX via Homebrew:</h4>
+				<pre><code>brew install maven</code></pre>
+			</section>
 
-				<section>
-					<h3>Configuring an existing project with Maven</h3>
-					<ol>
-						<li>Clone the project.</li>
-						<li>Remove any existing binaries or packages.</li>
-						<li>Create the Maven `pom.xml` configuration file.</li>
-					</ol>
-				</section>
-
-				<section>
-					<h3>Configuring an existing project with Maven</h3>
-					<p>Clone the project:</p>
-					<pre>
+			<section>
+				<h3>Configuring an existing project with Maven</h3>
+				<p>Clone the project:</p>
+				<pre>
 						<code data-trim>
 git clone https://github.com/overben/Snake.git
 						</code>
 					</pre>
-					<p>Remove any existing binaries or packages:</p>
-					<pre>
+				<p>Remove any existing binaries or packages:</p>
+				<pre>
 						<code data-trim>
 cd Snake
 rm SnakeGame.jar
 						</code>
 					</pre>
-				</section>
+			</section>
 
-				<section>
-					<h3>Configuring an existing project with Maven</h3>
-					<p>Create a basic Maven <code>pom.xml</code> configuration file:</p>
-					<pre>
+			<section>
+				<h3>Configuring an existing project with Maven</h3>
+				<p>Create a basic Maven <code>pom.xml</code> configuration file:</p>
+				<pre>
 						<code data-trim>
 &lt;project
   xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot;
@@ -96,14 +200,13 @@ rm SnakeGame.jar
 &lt;/project&gt;
 						</code>
 					</pre>
-				</section>
+			</section>
 
-				<section>
-					<p>
-						Configure Maven to build Java sources that are not in the standard
-						package-based location:
-					</p>
-					<pre>
+			<section>
+				<p>
+					Configure Maven to build Java sources that are not in the standard package-based location:
+				</p>
+				<pre>
 						<code>
 &lt;build&gt;
   &lt;sourceDirectory&gt;src&lt;/sourceDirectory&gt;
@@ -126,17 +229,17 @@ rm SnakeGame.jar
 &lt;/build&gt;
 						</code>
 					</pre>
-				</section>
+			</section>
 
-				<section>
-					<h3>Building the project with Maven</h3>
-					<pre>
+			<section>
+				<h3>Building the project with Maven</h3>
+				<pre>
 						<code>
 cd Snake
 mvn package
 						</code>
 					</pre>
-				</section>
+			</section>
 
 				<section><h3>Running Unit Tests with Maven</h3><p>Add junit tests to projdir/src/test/java</p><p>Run tests using: </p><pre><code>mvn test</code></pre><p>Add the following lines to your pom.xml for the junit dependencies</p><pre><code>
 &lt;dependencies&gt;
@@ -160,7 +263,36 @@ public class TestSnake {
 			</pre></code></section>
 			</div>
 		</div>
+	</div>
 
+	<script src="lib/js/head.min.js"></script>
+	<script src="js/reveal.js"></script>
+
+	<script>
+		// More info https://github.com/hakimel/reveal.js#configuration
+		Reveal.initialize({
+			history: true,
+
+			// More info https://github.com/hakimel/reveal.js#dependencies
+			dependencies: [{
+				src: 'plugin/markdown/marked.js'
+			}, {
+				src: 'plugin/markdown/markdown.js'
+			}, {
+				src: 'plugin/notes/notes.js',
+				async: true
+			}, {
+				src: 'plugin/highlight/highlight.js',
+				async: true,
+				callback: function() {
+					hljs.initHighlightingOnLoad();
+				}
+			}]
+		});
+	</script>
+</body>
+
+<<<<<<< HEAD
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.js"></script>
 
@@ -188,4 +320,6 @@ public class TestSnake {
 			});
 		</script>
 	</body>
+=======
+>>>>>>> 72a4838d41c2686121fc1ea02b2a9abea86cf628
 </html>
