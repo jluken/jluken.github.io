@@ -241,7 +241,10 @@ mvn package
 					</pre>
 			</section>
 
-				<section><h3>Running Unit Tests with Maven</h3><p>Add junit tests to projdir/src/test/java</p><p>Run tests using: </p><pre><code>mvn test</code></pre><p>Add the following lines to your pom.xml for the junit dependencies</p><pre><code>
+			<section>
+				<h3>Running Unit Tests with Maven</h3><p>Add junit tests to projdir/src/test/java</p><p>Run tests using: </p><pre><code>mvn test</code></pre><p>Add the following lines to your pom.xml for the junit dependencies</p>
+				<pre>
+					<code>
 &lt;dependencies&gt;
 	&lt;dependency&gt;
 		&lt;groupId&gt;junit&lt;/groupId&gt;
@@ -249,8 +252,13 @@ mvn package
 		&lt;version&gt;4.8.2&lt;/version&gt;
 		&lt;scope&gt;test&lt;scope&gt;
 	&lt;/dependency&gt;
-&lt;/dependencies&gt;</pre></code></section>
-				<section><h3>Example Junit Test</h3><pre><code>
+&lt;/dependencies&gt;			
+					</code>
+				</pre>
+			</section>
+			<section><h3>Example Junit Test</h3>
+				<pre>
+					<code>
 import junit.framework.Assert;
 import org.junit.Test;
 public class TestSnake {
@@ -260,8 +268,9 @@ public class TestSnake {
         }
 }
 
-			</pre></code></section>
-			</div>
+					</code>
+				</pre>
+			</section>
 		</div>
 	</div>
 
