@@ -138,7 +138,26 @@ mvn package
 					</pre>
 				</section>
 
-				<section>Running Unit Tests with Maven</section>
+				<section><h3>Running Unit Tests with Maven</h3><p>Add junit tests to projdir/src/test/java</p><p>Run tests using: </p><pre><code>mvn test</code></pre><p>Add the following lines to your pom.xml for the junit dependencies</p><pre><code>
+&lt;dependencies&gt;
+	&lt;dependency&gt;
+		&lt;groupId&gt;junit&lt;/groupId&gt;
+		&lt;artifactId&gt;junit&lt;/artifactId&gt;
+		&lt;version&gt;4.8.2&lt;/version&gt;
+		&lt;scope&gt;test&lt;scope&gt;
+	&lt;/dependency&gt;
+&lt;/dependencies&gt;</pre></code></section>
+				<section><h3>Example Junit Test</h3><pre><code>
+import junit.framework.Assert;
+import org.junit.Test;
+public class TestSnake {
+        @Test
+        public void testAdd(){
+                Assert.assertTrue((1+1)==2);
+        }
+}
+
+			</pre></code></section>
 			</div>
 		</div>
 
@@ -155,6 +174,15 @@ mvn package
 					{ src: 'plugin/markdown/marked.js' },
 					{ src: 'plugin/markdown/markdown.js' },
 					{ src: 'plugin/notes/notes.js', async: true },
+import junit.framework.Assert;
+import org.junit.Test;
+public class TestSnake {
+        @Test
+        public void testAdd(){
+                Assert.assertTrue((1+1)==2);
+        }
+}
+
 					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
 				]
 			});
